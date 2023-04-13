@@ -1,0 +1,32 @@
+Java Notes
+
+- Strings are immutable in java it means you cannot change the value of it, you have to convert it into an char array then you can change it.
+- String builder and String buffer make mutable String variable.It means we can modify the String using setcharat func.
+- insert,delete,setcharat,append are different function of string builder.
+- To convert primitive data types to string we can use string.value of method.
+- We can use String builder to add char array into it and then we can use .to string method to convert it into string.
+- we can also add a whole string to string builder using append function.
+- There are three string class - String , StringBuffer, StringBuilder
+-  String class use new heap memory everytime you add String to it whereas string buffer and string builder use same heap memory to add new string.Hence saves time complexity and space complexity.
+- We cannot use pass by refrence in java therefore you can use global varible and make changes.
+- To Make a global varible we can use static and final keyword.
+-If we use static varibale, its value will not change after each object call.(one time memory allocation)
+  ex-  static a =50;
+       now you change its value to 100;
+       then its value be 100 even if you call a new object of class.
+-Final keywords is used to restrict the use of variable,method and class.You cannot change the value after usin
+final keywords.
+
+Sorting
+
+- Selection sort - selection sort is basically finding the smallest number and then replacing it one by one index.It basically has sorted and unsorted array
+- Insertion sort is bascially looping over each array value and check whether the number is small or not than the previous one if it is then swap it. We have to do this until the number is samll with the previous one.
+- Bubble sort is vice versa of selection sort here we will swap the largest number with neighbour.Also here we swap continously until we put the largest element in that iteration.
+- Merge sort is divide and rule method.first we divide the array in half and do recursively and then we sort those half array and at last merge it.
+- Quick sort is also divide and rule method. Here we first set the pivot element and then put all the element which is small to pivot to left and the element which is largest to pivot to right.
+then will do recursive sort on partition.(pivot index)
+- Heap Sort
+Heap sort is basically done by methods, 1 is upheapify and 2 is downheapify.
+In Upheapify we start with starting index of array to length of array and making a parent by (i-2)/2 and then we check other elements one by one.If it is small them we swap the element with parent.And the new parent will be the index which have been swap.we do this in while loop until the parent is small than the element.
+- AFTER The array is uoheapify then we do downheapify.Here we will always take the top most element and switch it with the last endex.As the top one is small one.Also we will call downheapify by changing the last index-1.
+- In downheapify after we switch the top with end.Now we have to check the child. we get two childs always by child1 = 2*i+1 and child2 = 2*i+2.Now we check until the child is small than the parent.if it is then we switch the parent with child and new parent will be child we have switched.And the new child will be again child1 = 2*i+1 and child2 = 2*i+2
