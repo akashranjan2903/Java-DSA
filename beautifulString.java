@@ -59,6 +59,7 @@ public static void main (String [] args){
 // taking string input from user
 Scanner sc = new Scanner(System.in);
 String str = sc.nextLine();
+sc.close();
 // convert the string into char array
 char strarray [];
 strarray = str.toCharArray();

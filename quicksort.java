@@ -64,7 +64,7 @@ public class quicksort{
         for(int i=0; i <size ;i++){
             arr[i] = sc.nextInt();
         }
-
+        sc.close();
         display(arr);
         mergeSort(arr, 0, arr.length-1); //recursively sort the array.  start and end are the indices.  arr
         display(arr);

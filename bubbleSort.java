@@ -17,6 +17,7 @@ public class bubbleSort {
     for(int i=0; i <size ;i++){
         arr[i] = sc.nextInt();
     }
+    sc.close();
     display(arr);
     
     for(int i=0; i < arr.length-1; i++){//32,6,2

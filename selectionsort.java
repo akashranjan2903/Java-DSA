@@ -12,6 +12,7 @@ public class selectionsort {
         for(int i=0; i <size ;i++){
             arr[i] = sc.nextInt();
         }
+        sc.close();
         // display the array
         for (int i=0; i <size ;i++){
             System.out.print(arr[i]+",");

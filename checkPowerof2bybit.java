@@ -12,5 +12,6 @@ public static void main(String [] args){
         else{
         System.out.println("Numberis not a square root of 2");
         }
+    sc.close();
 }
 }

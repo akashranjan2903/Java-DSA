@@ -75,6 +75,7 @@ public class heapsort {
         for(int i=0; i <size ;i++){
             arr[i] = sc.nextInt();
         }
+        sc.close();
         display(arr);
         heapsort(arr);
         display(arr);

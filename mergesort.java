@@ -50,6 +50,7 @@ public class mergesort{
         for(int i=0; i <size ;i++){
             arr[i] = sc.nextInt();
         }
+        sc.close();
         display(arr);
         int []newarr= mergeSort(arr);  //calling the method to sort the array.
         display(newarr);
