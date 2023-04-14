@@ -48,14 +48,14 @@ public class quicksort{
 
 
     }
-    public static void mergeSort(int [] arr, int start, int end){
+    public static void quickSort(int [] arr, int start, int end){
         //  if array is length 1 or 0, nothing to sort.
         if (start >= end){
             return;
           }
         int partition = partition(arr, start, end); //partition the array.  partition is the new pivot index.  newPivotIndex is the index of the pivot element.  arr[new
-        mergeSort(arr, start, partition-1); //recursively sort the left side of the array.
-        mergeSort(arr, partition+1, end);
+        quickSort(arr, start, partition-1); //recursively sort the left side of the array.
+        quickSort(arr, partition+1, end);
     } 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -66,7 +66,7 @@ public class quicksort{
         }
         sc.close();
         display(arr);
-        mergeSort(arr, 0, arr.length-1); //recursively sort the array.  start and end are the indices.  arr
+        quickSort(arr, 0, arr.length-1); //recursively sort the array.  start and end are the indices.  arr
         display(arr);
     }
 }

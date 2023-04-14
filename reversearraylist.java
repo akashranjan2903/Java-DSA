@@ -1,6 +1,6 @@
 import java.util.*;
 public class reversearraylist{
-    public static String reverse(String str){
+    private static String reverse(String str){
      // use list to convert string 
      List<String> list = new ArrayList<String>();
       String temp = "";

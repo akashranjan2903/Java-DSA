@@ -1,4 +1,5 @@
 Java Notes
+- Java uses two types of memory allocation - Stack, Heap
 -Four Types of access modifiers in java - Private,Default,Protected,Public
 - Private can only be access within class;
 - Default can be access within class and same package and not outside the package.
@@ -82,3 +83,21 @@ Heap sort is basically done by methods, 1 is upheapify and 2 is downheapify.
 In Upheapify we start with starting index of array to length of array and making a parent by (i-2)/2 and then we check other elements one by one.If it is small them we swap the element with parent.And the new parent will be the index which have been swap.we do this in while loop until the parent is small than the element.
 - AFTER The array is uoheapify then we do downheapify.Here we will always take the top most element and switch it with the last endex.As the top one is small one.Also we will call downheapify by changing the last index-1.
 - In downheapify after we switch the top with end.Now we have to check the child. we get two childs always by child1 = 2*i+1 and child2 = 2*i+2.Now we check until the child is small than the parent.if it is then we switch the parent with child and new parent will be child we have switched.And the new child will be again child1 = 2*i+1 and child2 = 2*i+2
+
+- RECURSION
+- Recursion is a process in which a method calls itself continuously. A method in java that calls itself is called recursive method. It makes the code compact but complex to understand.
+- There are four types of recursion 
+- Tail Recursion -  Function calls itself at the end of func.
+- Non-Tail Recursion _ Function calls itself Not at the end of func.
+- Indirect recursion _ Function calls another function which calls the same function.
+- nested recursion _ Function calls itself inside the function.
+
+Arrays have two issues
+- It only be declared in the contigous memory location.(contigous means continously).
+- It has fixed size.
+ Thats why we use Array List.it solved both issues.
+ We can delete or increase a list size.
+
+ Arrays store primitive data types like int,float,bool etc and also objects like Integer and Strings
+ But Array list stores only Objects like Integer and String and not primitive data type because primitive datatypes
+ need to be define the memory initially
