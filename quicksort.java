@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
+
 public class quicksort{
+    
     public static void display(int [] arr){
         System.out.println("Array is:");
         for (int i=0; i< arr.length; i++){
@@ -62,6 +64,7 @@ public class quicksort{
         for(int i=0; i <size ;i++){
             arr[i] = sc.nextInt();
         }
+
         display(arr);
         mergeSort(arr, 0, arr.length-1); //recursively sort the array.  start and end are the indices.  arr
         display(arr);
