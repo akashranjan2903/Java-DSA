@@ -20,7 +20,7 @@ public class maximunsubarraysum {
           {
              // add index of subray to list which is having max sum
             startindex=i;
-            lastindex=j;
+            lastindex=j+1;
             maxsum =sum;
            
 
