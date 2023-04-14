@@ -1,12 +1,9 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class maximunsubarraysum {
     
     public static void main(String[] args){
     int arr[] = {1,2,7,-4,3,2,-10,9,1};
-    List<Integer> list = new ArrayList<Integer>();
     int sum =0;
     int maxsum=0;
     int startindex=0;

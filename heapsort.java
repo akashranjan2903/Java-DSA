@@ -59,7 +59,7 @@ public class heapsort {
             }
        }
     
-    public static void heapsort(int [] arr){ 						//arr.length is assumed to be at least 1.
+    public static void heapSort(int [] arr){ 						//arr.length is assumed to be at least 1.
        for(int i=0; i<arr.length; i++)
        {
          upheapify(arr, i);
@@ -77,7 +77,7 @@ public class heapsort {
         }
         sc.close();
         display(arr);
-        heapsort(arr);
+        heapSort(arr);
         display(arr);
     }
 }
