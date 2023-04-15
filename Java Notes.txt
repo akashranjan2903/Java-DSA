@@ -73,7 +73,7 @@ final keywords.
 Sorting
 
 - Selection sort - selection sort is basically finding the smallest number and then replacing it one by one index.It basically has sorted and unsorted array
-- Insertion sort is bascially looping over each array value and check whether the number is small or not than the previous one if it is then swap it. We have to do this until the number is samll with the previous one.
+- Insertion sort is bascially looping over each array value and check whether the number is small or not than the previous one if it is then swap it. We have to do this until the number is small with the previous one.
 - Bubble sort is vice versa of selection sort here we will swap the largest number with neighbour.Also here we swap continously until we put the largest element in that iteration.
 - Merge sort is divide and rule method.first we divide the array in half and do recursively and then we sort those half array and at last merge it.
 - Quick sort is also divide and rule method. Here we first set the pivot element and then put all the element which is small to pivot to left and the element which is largest to pivot to right.
