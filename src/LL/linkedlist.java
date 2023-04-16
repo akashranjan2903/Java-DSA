@@ -2,7 +2,6 @@ package src.LL;
 
 import java.util.ArrayList;
 
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 public class linkedlist {
     Node head;
@@ -17,11 +16,11 @@ private class Node {
     int val;
     Node next;
  
-    //  we will intialize the node with value only and its next is null  by default 
+    //  we will initialize the node with value only and its next is null  by default 
     private Node(int val){
         this.val = val;
     }
-    // we will intialize the node with value only and its next is pointing/refrencing to some node.
+    // we will initialize the node with value only and its next is pointing/referencing to some node.
     private Node(int val, Node next){
         this.val = val;
         this.next = next;   
@@ -53,6 +52,8 @@ private class Node {
   }
   // display the ll
   void display(){
+    System.out.println("head"+head.val);
+
     Node temp = head;
     while(temp!= null){
         System.out.print(temp.val);
@@ -175,7 +176,7 @@ private class Node {
         if(start.next != null){// check if the start is not null
             start = start.next;
         }
-        if(start.next!= null){// check if the satrt next next is not null only then end is null and end is the end of the linked list.  so, end = null.
+        if(start.next!= null){// check if the start next next is not null only then end is null and end is the end of the linked list.  so, end = null.
         end = start.next;
         }
         
@@ -201,7 +202,7 @@ private class Node {
         return prev;
 
     }
-    void sortAsc(){
+    void selectionSortAsc(){
       
          Node start =head.next;
          
@@ -210,7 +211,7 @@ private class Node {
         
         Node p2 = prevNode(p1);
         while( p2!= null && p1.val<p2.val){
-            Node prev = prevNode(p1);// we need this to get the prev of p1,we cant use p2 here beacuse we also need the previous of p2,so we are using temp prev for p1
+            Node prev = prevNode(p1);// we need this to get the prev of p1,we cant use p2 here because we also need the previous of p2,so we are using temp prev for p1
             // swap the value
             int temp = p1.val;
             p1.val = prev.val;
@@ -224,5 +225,74 @@ private class Node {
         
       }
         
+    }
+    Node partition (Node start,  Node end){
+       // pivot value be first one
+       // find the correct position of pivot value and swap
+      
+       int counter =0 ;
+       Node pivotNode = start;
+       Node tempnode = null;
+     if (pivotNode.next!= null){
+        tempnode = pivotNode.next;
+     }
+     
+      while(tempnode != end.next ){
+       if(tempnode.val < pivotNode.val){
+          counter++;
+       }
+       tempnode = tempnode.next;  // move to next one
+
+       }
+       tempnode = pivotNode;
+
+       for(int i =1; i<=counter;i++){
+        tempnode = tempnode.next;
+       }
+      // swap the tempNode and pivot value
+      if (tempnode!= null){
+       int temps = tempnode.val;
+       tempnode.val = pivotNode.val;
+       pivotNode.val = temps;
+      }
+    
+      Node i = start;
+      Node j = end;
+      
+
+      // get all small value to left of pivot and large value right of pivot
+      while(j!= null &&i!=j){
+        
+        while(i.val < tempnode.val){
+            i = i.next;
+        }
+        while (j.val> tempnode.val){
+            j= prevNode(j); 
+        }
+        // swap the value of i and j
+        if (i!=j){
+
+        int temp = i.val;
+        i.val = j.val;
+        j.val = temp;
+        i = i.next;
+        j= prevNode(j);
+        }
+      }
+
+      return tempnode;
+
+    }
+    void QuickSort(Node start,Node end){
+
+        if (start == end || prevNode(start) == end){
+            return;
+        }
+        Node Pivot = partition(start, end);
+
+        QuickSort(start, prevNode(Pivot));
+        QuickSort(Pivot.next, end);
+       
+
     }
 }

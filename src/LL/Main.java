@@ -31,8 +31,12 @@ public static void main (String args []){
     System.out.println("Linked list after removal of duplicates");
     list.display();
     // sorted linked list
-    System.out.println(list.size);
-    list.sortAsc();
+    // list.selectionSortAsc();
+    // list.display();
+  
+    list.QuickSort(list.head, list.tail);
     list.display();
+    
+    
 }
 }
