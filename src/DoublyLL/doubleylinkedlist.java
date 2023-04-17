@@ -16,12 +16,7 @@ private class Node {
     Node(int val){
         this.value = val;
     }
-    Node(Node prev, Node next, int val){ 
-        	this.value = val;
-            this.next = next;
-            this.prev = prev;
-            
-}
+    
 } 
   void insertFirst(int val){
     Node temp = new Node(val);
@@ -119,6 +114,33 @@ private class Node {
     size--;
     
     return temp;
+  }
+  int getvalue(int index){ //return the value of the index node.
+    if (index==0){
+        return head.value;
+    }
+    if(index>=size){
+        return -1;
+    }
+    int p1 = 0;
+    Node temp = head;
+    while(p1 != index){
+        temp = temp.next;
+        p1++;
+    }
+    return temp.value;
+  }
+  int getIndexByValue(int value){
+    Node temp = head;
+    int index =0;
+    while(temp.value!= value){
+        temp = temp.next;
+        if(temp.next== null){// if no element is found
+            return index = -1;
+        }
+        index++;
+    }
+    return index;
   }
   void display(){
    
