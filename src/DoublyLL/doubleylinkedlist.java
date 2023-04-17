@@ -38,9 +38,90 @@ private class Node {
     }
     size++;
   }
+  void insertLast(int val){
+    if(head== null){
+        insertFirst(val);
+        return;
+    }
+    Node temp = new Node(val);
+    tail.next = temp;
+    temp.prev=  tail;
+    tail = temp;
+    size++;
+  }
+  void removeAllDuplicates(){
+    if (head.next == null){
+        return;
+    }
+    Node start = head;
+    Node p1 = start; // prev node
+    Node p2 = p1.next; // current node
+    
+    while(start != tail){
+    
+        while(p2!= null){
+            
+            if(start.value ==  p2.value){
+              
+                if(p2.next == null){ // it means p2 is last element and it is duplicate of start so tail will becaome prev node
+                     tail = p1;
+                     p1.next = null;
+                     p2 = null;
+        
+                }
+                else{
+                    p1.next = p2.next;
+                    p2.next.prev = p1; // connect two nodes.
+                    p2 = p2.next;
+                }
+                size--;
+            }
+            else{
+                p1 = p2;
+                p2 = p2.next;
+            }
+           
+        }
+        if(start!= tail){
+        start = start.next;
+        p1= start;
+        p2= p1.next;
+        }
+        
+    }
+  }
+  int delete(int index){
+    if (index == 0){
+        int temp = head.value;
+        head= tail = null;
+        size--;
+        return temp;
+    }
+    Node p1 = head; //prev node
+    for (int i =1; i<= index;i++){
+        p1 = p1.next;//current node of index
+        if(i+1 == size){
+            tail = p1.prev; // update tail node
+        }
+    }
+    // remove the current node
+    int temp = p1.value;
+    
+    if(p1.prev!= null){
+    p1.prev.next = p1.next;
+    
+    }
+    if(p1.next!= null){ // if there is a next node, update the next node's prev node.
+     p1.next.prev =p1.prev;
+}   
+    p1.next = null;
+    p1.prev = null;
+    size--;
+    
+    return temp;
+  }
   void display(){
-    // System.out.println("head"+head.value);
-    // System.out.println("tail"+tail.value);
+   
     Node temp = head;
     while(temp!= null){
         System.out.print(temp.value);
@@ -51,5 +132,7 @@ private class Node {
        
     }
     System.out.println();
+     System.out.println("head"+head.value);
+    System.out.println("tail"+tail.value);
 }
 }
