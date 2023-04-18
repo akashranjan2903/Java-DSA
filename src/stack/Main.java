@@ -53,5 +53,11 @@ public class Main {
     }
     str = new String(arr); //converting char array to string.
     System.out.println("reversed string:"+str);
+
+    // check palindrome of linked list using stack
+    // In this case what we can do is reverse of the number or a string is equal then its palindrome
+    // so we will pull each element in linked list to stack, stack will be in reverse of linked list
+    //  and then pop each element and compare it with the linked list head and move the head ahead
+    //  if head is not equals to top it means its not a palindrome .
 }
 }
