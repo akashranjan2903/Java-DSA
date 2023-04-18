@@ -1,5 +1,7 @@
 package src.stack;
 
+import java.util.Stack;
+
 public class Main {
     public static void main (String args []){
     // array stack implementation
@@ -34,5 +36,22 @@ public class Main {
     lstack.display();
     linkedlistStack lstackNew=lstack.removeDuplicates(); //this duplicate function is for continous duplicates 
     lstackNew.display();
+
+    // reverse a string using stack
+
+    Stack<Character> newStack = new Stack<>();
+    String str = "Hello World";
+     
+    char arr[] = str.toCharArray();
+    for(int i=0; i< arr.length;i++){
+        newStack.push(arr[i]);
+    }
+    // pop the element and store in the char arr
+    for(int i=0; i< arr.length;i++){
+        char val = newStack.pop();
+        arr[i] = val;
+    }
+    str = new String(arr); //converting char array to string.
+    System.out.println("reversed string:"+str);
 }
 }
