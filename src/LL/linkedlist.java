@@ -12,7 +12,7 @@ public class linkedlist {
         size = 0;
     }
 
-private class Node {
+class Node {
     int val;
     Node next;
  
@@ -293,6 +293,39 @@ private class Node {
         QuickSort(start, prevNode(Pivot));
         QuickSort(Pivot.next, end);
        
+
+    }
+    boolean loopCheck(){
+        // checking the only element
+        if (head == tail && tail.next == head){
+           return true;
+        }
+        else if (head == tail){
+            return false;
+        }
+        Node slowp = head;
+        Node fastp = head;
+        
+        boolean flag = false;;
+        while(fastp != null){
+            if(fastp.next!= null){// checking if the next value is not null then only we can take 2 steps
+            fastp = fastp.next.next;
+            }
+           
+            slowp = slowp.next;
+            if (fastp == slowp){
+                flag = true;
+                return flag;
+            }
+            if(fastp != null && fastp.next!= null){ // checking if fast pointer becomes null and next is also not null
+            fastp = fastp.next.next;
+            }
+            else{
+                fastp = null;
+            }
+            slowp = slowp.next;
+        }
+        return flag;
 
     }
 }
