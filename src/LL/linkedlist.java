@@ -328,4 +328,16 @@ class Node {
         return flag;
 
     }
+    int binaryConversion(){
+      Node temp = tail;
+      int decimal =0;
+      int i =0;
+      while (temp!=head){
+        Node prev = prevNode(temp);
+        decimal = decimal+temp.val* (int)Math.pow(2, i);
+        temp = prev;
+        i++;
+      }
+      return decimal;
+    } 
 }

@@ -63,7 +63,19 @@ public static void main (String args []){
     System.out.println("check:"+check);
 
 
+    // create a linked kist of binary reprentation and we have to tell what is the decimal represenation 
 
+    linkedlist list3 = new linkedlist();
+    //binary of 3 is 0011
+    list3.insertLast(0);
+    list3.insertLast(0);
+    list3.insertLast(1);
+    list3.insertLast(1);
+    list3.insertLast(1);
+    list3.display();
+
+    int decimal = list3.binaryConversion();
+    System.out.println("decimal representation of the given binary is:"+decimal);
      
 }
 }
